@@ -67,7 +67,10 @@ app.use(bodyParser.json());
  */
 
 var router = {
-  index: require('./routes/index')
+  index: require('./routes/index'),
+  store: require('./routes/index'),
+  projects: require('./routes/projects'),
+  contact: require('./routes/contact')
 };
 
 
@@ -76,6 +79,9 @@ var router = {
  */
 
 app.get('/', router.index.view);
+app.get('/store.html', router.store.view);
+app.get('/projects.html', router.projects.view);
+app.get('/contact.html', router.contact.view);
 
 app.use(function(req, res) {
   res.status(404);
