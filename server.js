@@ -12,6 +12,9 @@ var bodyParser = require('body-parser');
 
 var handlebars = require('express-handlebars');
 
+// Added by Diego - Used for contact form
+var nodemailer = require('nodemailer');
+
 
 /**
  * Variables
@@ -83,6 +86,35 @@ app.get('/store.html', router.store.view);
 app.get('/projects.html', router.projects.view);
 app.get('/contact.html', router.contact.view);
 
+//Implementing POST for contact form
+app.post('/contact', function(req, res){
+
+let transporter = nodemailer.createTransport({
+service: 'Gmail',
+auth:{
+user: 'diegodummytester@gmail.com',
+pass: 'thisisadummy123'
+}
+
+});
+
+let mailOptions = {
+from: req.body.email,
+to: 'lincolnschoolgardenclub@gmail.com',
+subject: 'Contact Form from user <' + req.body.name +'>',
+text: req.body.context
+};
+
+transporter.sendMail(mailOptions, (error, info) =>{
+if (error) {
+res.send("Failed to send the form.");
+}
+res.send("Your form was sent successfully");
+});
+
+}
+);
+
 app.use(function(req, res) {
   res.status(404);
 
@@ -110,3 +142,4 @@ app.use(function(req, res) {
 http.createServer(app).listen(app.get('port'), function() {
   console.log('Express server listening on port ' + app.get('port'));
 });
+
