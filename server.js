@@ -9,7 +9,6 @@ var express = require('express');
 var compression = require('compression');
 var serveStatic = require('serve-static');
 var bodyParser = require('body-parser');
-
 var handlebars = require('express-handlebars');
 
 // Added by Diego - Used for contact form
@@ -105,13 +104,18 @@ subject: 'Contact Form from user <' + req.body.name +'>',
 text: req.body.context
 };
 
+if (!req.body.phone.trim() || !req.body.email.trim() || !req.body.name.trim() || !req.body.context.trim()){
+res.end("failed");
+}
+
+else{
 transporter.sendMail(mailOptions, (error, info) =>{
 if (error) {
-res.send("Failed to send the form.");
+res.end("failed");
 }
-res.send("Your form was sent successfully");
+res.end("done");
 });
-
+}
 }
 );
 

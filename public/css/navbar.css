@@ -1,0 +1,77 @@
+
+/** Control the visual look of the NavBar, THE BAR! :)
+ **
+ ** One thing I have used for is to set background to be white,
+ ** then... I created 2 solid borders: TOP and BOTTOM
+ ** You can change the border width here too! 
+ **/
+ul {
+    list-style-type: none;
+    text-align: center;
+    padding: 0;
+    overflow: hidden;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    background-color: white;
+}
+
+li {
+    padding-right: 30px; /* Space between each navbar*/
+    display: inline-block; /* To display horizontally */
+}
+
+/** Can be used to change the font-size, font-color... etc
+ ** of the NavBar items
+ **
+ **/
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+
+/* The commented out is to modify a specific navbar*/
+/*
+li:nth-child(4) a{
+ color: #009933;
+ font-style: italic;
+}*/
+
+
+/** This is the place where you wanna set the effects for:
+ ** 1) When mouse is over the navbar element.
+ ** 2) The navbar's element is NOT the current page you are now.
+ **
+ ** For example:
+ ** If you are on the Contact.html, it will give effects if you put your
+ ** mouse over the navbar elements that are NOT contact navbar.
+ **
+ ** Thus, leaving mouse over the home navbar, it will create a effect
+ ** you declare below.
+ */
+li a:hover:not(.active) {
+    background-color: green; /* This change the background color to be green */
+}
+
+/** This is the effect for the current navbar you are now.
+ **
+ ** How to set active in HTML?
+ **
+ ** ANS: add: class="active" :)
+ ** Look the example below... it will set active for contact navbar
+ **
+ ** <li><a href="/">Home</a></li>
+ ** <li><a href="store.html">Produce</a></li>
+ ** <li><a href="projects.html">Projects</a></li>
+ ** <li><a class="active" href="contact.html">Contact</a></li>
+ ** <li><a href="">Blog</a></li>
+ **
+ **/
+.active {
+    color: #009933;
+    font-style: italic;
+}
+
