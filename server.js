@@ -70,7 +70,7 @@ app.use(bodyParser.json());
 
 var router = {
   index: require('./routes/index'),
-  store: require('./routes/index'),
+  store: require('./routes/store'),
   projects: require('./routes/projects'),
   contact: require('./routes/contact')
 };
