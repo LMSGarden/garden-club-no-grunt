@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Lincoln Middle School Garden Website</title>
+
+        {{> meta}}
+
+        <link rel="stylesheet" href="/css/main.min.css">
+        <script src="/js/vendor/modernizr.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        {{> navbar}}
+
+        <section id="index">
+            <div id="index-header-img">
+                <img src="img/index-header.png" id="index-img" alt="Index Header" />
+                <div id="index-header-txt">
+                    <h1>Catchy Text</h1>
+                    <p>text text more text some description fun text</p>  
+                </div><!-- #index-header-txt -->            
+            </div><!-- #index-header-img -->
+            <section id="index-about">
+                <div id="about-wrapper">
+                    <span>About</span>
+                    <div id="about-text">
+                        ksdjhfaksdjasdhfasdjflkas
+                    </div><!-- #about-text -->
+                    <div id="about-picture">
+                        
+                    </div><!-- #about-picture -->
+                </div><!-- #about-wrapper -->
+                
+            </section><!-- #index-about -->
+            <section id="index-produce">
+                <div id="produce-text">
+                    <span>WE'RE GROWING THINGS</span>
+                    <p>want to buy what we're going?</p>
+                    <button>CHECK IT OUT</button>
+                </div><!-- #produce-text -->
+            </section><!-- #index-produce -->
+            <section id="index-partners">
+                <span>OUR PARTNERS</span>
+            </section><!-- #index-partners -->
+        </section><!-- #index -->
+
+        <script src="/js/vendor/jquery-1.12.0.min.js"></script>
+        <script src="/js/main.min.js"></script>
+
+        {{> ga}}
+    </body>
+</html>
