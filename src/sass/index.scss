@@ -1,8 +1,11 @@
+@import 'bourbon/bourbon';
 
 $ind-header-img-height: 50%;
 $ind-about-height: 50%;
 $ind-produce-height: 40%;
 $ind-partners-height: 40%;
+
+
 
 html, body {
     height: 100%;
@@ -10,43 +13,115 @@ html, body {
 }
 
 #index {
-	width: 100%;
 	height: 100%;
-	
-	#index-header-img {
-		height: $ind-header-img-height;
-		position: relative;
-		
-		#index-img {
-			position: static;
-			width: 100%;
-			z-index: -1;
-		}
+	width: 100%;
+	h1 {
+		margin: 0;
+	}
+	h2 {
+		text-align: center;
+	}
+
+	#index-header-img  {
+		background-image: url("/img/index-header.jpg");
+		min-height: 500px;
+
+		/*parallax scrolling effect, does not work for android phones*/
+		background-attachment: fixed;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-color: #eaeaea;
 
 		#index-header-txt {
 			position: absolute;
 			top: 50%;
+			@include transform(translateY(-50%));
 			color: #fff;
+			padding-left: 5%;
 
+			h1, p {
+				background-color: black;
+			}
+		}
+	}
+
+	#about-wrapper {
+		min-height: 50%;
+		background-color: #fff;
+		text-align: center;
+
+		#about-text {
+			display: inline-block;
+			width: 30%;
+			text-align: left;
+			padding: 10px;
+			
 		}
 
+		#about-picture {
+			display: inline-block;
+			padding: 10px;
+			img {
+				height: 250px;
+			}
+		}
 	}
 
-	#index-about {
-		height: $ind-about-height;
-		
+	#produce-wrapper {
+		position: relative;
+		#produce-img {
+			background-image: url("/img/index-produce-img.png");
+			min-height: 300px;
+
+			/*parallax scrolling effect, does not work for android phones*/
+			background-attachment: fixed;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-color: #eaeaea;
+			opacity: 0.3;
+			#produce-text {
+				color: #fff;
+			}
+		}
+
+		#produce-text-test {
+			position: absolute;
+			top: 50%;
+			@include transform(translateY(-50%));
+			color: #fff;
+
+			padding-left: 5%;
+
+			p {
+			    margin-top: 0.5em;
+			    margin-bottom: 2em;
+			}
+
+			a {
+				position: relative;
+				text-decoration: none;
+				font-weight: bold;
+				font-size: 10px;
+				background-color: #63AA15;
+				border-radius: 5px;
+				color: #324B16;
+				padding: 10px 20px;
+				box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+
+				&:hover {
+					background-color: #7ABE30;
+				}
+			}
+		}
+
+		background-color: #000; /*for black opacity*/
 	}
-
-	#index-produce {
-		height: $ind-produce-height;
-		background-color: yellow;
+	#partners-wrapper {
+		height: 40%;
+		background-color: #fff;
 	}
-
-	#index-partners {
-		height: $ind-partners-height;
-		background-color: green;
-	}
-
-
 
 }
+

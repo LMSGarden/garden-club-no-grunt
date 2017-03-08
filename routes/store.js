@@ -1,3 +1,3 @@
 exports.view = function(req, res) {
-	response.render('store');
+	res.render('store');
 }
