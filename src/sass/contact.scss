@@ -1,0 +1,241 @@
+/** 
+ **
+ **  NOTE: THIS CSS FILE IS REQUIRED FOR CONTACT.HTML!
+ **
+ **/
+
+
+/**  This is the MAIN Container. Everything is inside this DIV
+ **
+ **  Observations: I have set maximum width to be
+ **  1200px.
+ **/
+.mycontainer{
+        max-width: 1200px;
+        display: inline-block; /* Layout fixed. Minimizing screen will not affect it.*/
+        margin:auto;
+}
+
+/** This is a main column divider for the:
+ ** Left: Contact Form  Right: Contact Information
+ ** 
+ ** Note: Adding settings here will affect both columns
+ **/
+#columnDivider {
+ /*ADD codes if needed here*/
+}
+
+/** This is a left column divider (a.k.a: Contact Form):
+ **
+ ** Note: Adding settings here will affect the contact form
+ **/
+#columnLeft {
+    float: left; /* Positioning at left */
+    width: 50%; /* Ocupy 50% of total width */
+    margin-left: 100px; /* Push everything 120px to right */
+}
+
+
+
+/**  This is to modify the message: "Get in touch with us!"
+ **
+ **  USES:
+ **  You can change its font settings such as:
+ **  style, size, color.
+ **/
+.formIntro{
+    font-family: "Arial";
+    font-size: 28px;
+    color: #009900;
+    margin-bottom: 10px;
+}
+
+
+/**  This changes the input boxes.
+ **
+ **  I.E: It can be used to set the background color of
+ **  the input boxes, adding borders... etc
+ **
+ **  IMPORTANT NOTE: 
+ **  The MessageBox is not included... WHY?
+ **  Because it is not an input... it's a textarea
+ **  You will see textarea later on below.
+ **/
+
+    input[type="text"]{
+        
+    width: 365px;
+    height: 25px;
+    border-style: solid;
+    border-color: #cccccc;
+    border-width: 1px;
+    border-radius: 5px;
+        
+    /**  The code below will give our box multiple color.
+     **  i.e: 90% light green, and REST fill up with Dark Green
+     **/
+    background: linear-gradient(
+    #d2f6db 70%,
+    #7ee697
+    );
+
+}
+
+/**  This can modify the Send Button
+ **
+ **/
+
+input[type="submit"]{
+    margin-left: 215px; /* this means: Move right */
+    background-color: white;
+    font-family: "Gill Sans", sans-serif;
+    font-size: 14px;
+    width: 90px;
+    height: 25px;
+    border-radius: 5px; /* this makes the border more like a circle*/
+    border-style: solid;
+    border-color: #7979a4;
+    border-width: 1px;
+    font-stretch: ultra-expanded; /* Added but no effect. Remove it as you wish */
+}
+
+/**  This modifes all input that has type = "text" AND
+ **  it will IGNORE the first occurance
+ **
+ **  Effect desired: add a space on the top of input box
+ **/
+
+input[type="text"]:not(:first-child){
+   margin-top: 12px; /* This means: Moving down the inpux box :) */
+}
+
+
+/**  This modifies the MessageBox
+ **
+ **  Note: Only the Message Box... Do Not Get confused!
+ **  It does not affect the Name, Email, Phone text boxes.
+ **/
+
+textarea{
+    border-style: solid;
+    border-color: #cccccc;
+    border-width: 1px;
+    border-radius: 5px;
+    margin-top: 12px;
+    width: 362px;
+    height: 100px;
+    resize: none; /*This disables the user to be able to modify its width&height */
+    
+    
+    /**  The code below will give our box multiple color.
+     **  i.e: 90% light green, and REST fill up with Dark Green
+     **/
+    background: linear-gradient(
+    #d2f6db 70%,
+    #7ee697
+    );
+   
+}
+
+/** This is a Right column divider (a.k.a: Contact Info):
+ **
+ ** Note: Adding settings here will affect the contact info
+ **/
+#columnRight {
+    float: right; /* Positioning at right */
+    width: 50%; /* Ocupy 50% of total width */
+    margin-right: -100px; /* push everything 100px to left */
+    margin-top: 20px;
+  
+}
+
+/** This is a Right column's Column Divider:
+ **
+ ** Note: Adding settings here will affect both columns
+ **/
+
+#columnRightDivider{
+    margin-left: -100px;
+}
+
+/** This is a Right column's Left Column (a.k.a: Map):
+ **
+ ** Note: Adding settings here will affect the Map
+ **/
+
+#columnRight_left{
+    float: left; /* Positioning at right */
+    width: 40%; /* Ocupy 40% of total width */
+    
+}
+
+/** This is a Right column's Left Column (a.k.a: Info):
+ **
+ ** Note: Adding settings here will affect the Info
+ **/
+
+#columnRight_right{
+    float: right; /* Positioning at right */
+    width: 60%; /* Ocupy 60% of total width */
+    margin-top: 5px;
+    margin-right: -40px;
+    font-size: 24px;
+   
+}
+
+#cleared {
+    /** Below is a explanation from Google
+     **
+     ** Google says:
+     ** It is used to ensure the footer clears past elements that are floated in either
+     **
+     ** Used it because I THINK it is to put the code that comes below the divider
+     **/
+    clear: both;
+}
+
+/* This is to modify the footer div*/
+#theFooter{
+    /* ADD codes if needed HERE*/
+}
+
+
+/** This is related to the Message Dialog ( Confirmation Success)
+ **
+ ** It used to appear momentarily whenever the page is refreshed.
+ ** Thus, by applying display: none, it will avoid that to happen.
+ **/
+
+#successDialog {
+    display: none;
+}
+
+/** Settings below are related to the Dialog BOX
+ ** JqueryUI Dialog
+ **/
+
+.ui-dialog-titlebar-close {
+    width: 38px;
+    height: 35px;
+    cursor: pointer;
+    
+    color: #fff;
+    border: 1px solid #7979a4;
+    border-radius: 30px;
+    background: red;
+    font-size: 31px;
+    font-weight: bold;
+    
+    line-height: 0px;
+    padding: 11px 3px;
+
+}
+
+.ui-dialog .ui-dialog-titlebar {
+    width: 492px;
+    text-align: right;
+    background: grey !important;
+    border-color: #7979a4 !important;
+    border-style: solid;
+    border-width: 2px;
+}
