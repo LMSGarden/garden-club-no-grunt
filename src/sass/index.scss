@@ -1,0 +1,52 @@
+
+$ind-header-img-height: 50%;
+$ind-about-height: 50%;
+$ind-produce-height: 40%;
+$ind-partners-height: 40%;
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+#index {
+	width: 100%;
+	height: 100%;
+	
+	#index-header-img {
+		height: $ind-header-img-height;
+		position: relative;
+		
+		#index-img {
+			position: static;
+			width: 100%;
+			z-index: -1;
+		}
+
+		#index-header-txt {
+			position: absolute;
+			top: 50%;
+			color: #fff;
+
+		}
+
+	}
+
+	#index-about {
+		height: $ind-about-height;
+		
+	}
+
+	#index-produce {
+		height: $ind-produce-height;
+		background-color: yellow;
+	}
+
+	#index-partners {
+		height: $ind-partners-height;
+		background-color: orange;
+	}
+
+
+
+}

@@ -28,13 +28,26 @@ module.exports = function(grunt) {
         }]
       }
     },
+    concat: {
+      css: {
+        src: ['<%= pkg.build %>/css/sassout/*.css'],
+        dest: '<%= pkg.build %>/css/concatout/main.css'
+      },
+      js: {
+        options: {
+          separator: ';\n'
+        },
+        src: ['js/utils.js', 'js/*.js'],
+        dest: '<%= pkg.build %>/js/main.js'
+      }
+    },
     cmq: {
       options: {
         log: false
       },
       target: {
         files: {
-          '<%= pkg.build %>/css/cmqout': ['<%= pkg.build %>/css/sassout/*.css']
+          '<%= pkg.build %>/css/cmqout': ['<%= pkg.build %>/css/concatout/main.css']
         }
       }
     },
@@ -42,7 +55,7 @@ module.exports = function(grunt) {
       options: {
         sourceMap: false
       },
-      target: {
+      minify: {
         files: [{
           expand: true,
           cwd: '<%= pkg.build %>/css/cmqout',
@@ -60,15 +73,6 @@ module.exports = function(grunt) {
         globals: {
           jQuery: true
         }
-      }
-    },
-    concat: {
-      options: {
-        separator: ';\n'
-      },
-      target: {
-        src: ['js/utils.js', 'js/*.js'],
-        dest: '<%= pkg.build %>/js/main.js'
       }
     },
     uglify: {
@@ -155,8 +159,8 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', ['css', 'js', 'img']);
 
-  grunt.registerTask('css', ['clean:cssdist', 'sass', 'cmq', 'cssmin', 'modernizr', 'clean:build']);
-  grunt.registerTask('js', ['clean:jsdist', 'jshint', 'clean:jsdist', 'concat', 'uglify', 'modernizr', 'clean:build']);
+  grunt.registerTask('css', ['clean:cssdist', 'sass', 'concat:css', 'cmq', 'cssmin:minify', 'modernizr']);
+  grunt.registerTask('js', ['clean:jsdist', 'jshint', 'clean:jsdist', 'concat:js', 'uglify', 'modernizr', 'clean:build']);
   grunt.registerTask('img', ['clean:imgdist', 'imagemin']);
 
   grunt.registerTask('test', ['jshint']);
